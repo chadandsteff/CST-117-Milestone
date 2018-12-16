@@ -1,0 +1,10 @@
+C:\Users\Chad\source\repos\CST 117 Milestone\CST 117 Milestone\bin\Debug\CST 117 Milestone.exe.config
+C:\Users\Chad\source\repos\CST 117 Milestone\CST 117 Milestone\bin\Debug\CST 117 Milestone.exe
+C:\Users\Chad\source\repos\CST 117 Milestone\CST 117 Milestone\bin\Debug\CST 117 Milestone.pdb
+C:\Users\Chad\source\repos\CST 117 Milestone\CST 117 Milestone\obj\Debug\CST_117_Milestone.Form1.resources
+C:\Users\Chad\source\repos\CST 117 Milestone\CST 117 Milestone\obj\Debug\CST_117_Milestone.Properties.Resources.resources
+C:\Users\Chad\source\repos\CST 117 Milestone\CST 117 Milestone\obj\Debug\CST 117 Milestone.csproj.GenerateResource.cache
+C:\Users\Chad\source\repos\CST 117 Milestone\CST 117 Milestone\obj\Debug\CST 117 Milestone.csproj.CoreCompileInputs.cache
+C:\Users\Chad\source\repos\CST 117 Milestone\CST 117 Milestone\obj\Debug\CST 117 Milestone.exe
+C:\Users\Chad\source\repos\CST 117 Milestone\CST 117 Milestone\obj\Debug\CST 117 Milestone.pdb
+C:\Users\Chad\source\repos\CST 117 Milestone\CST 117 Milestone\obj\Debug\CST 117 Milestone.csprojAssemblyReference.cache
