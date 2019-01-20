@@ -1,6 +1,6 @@
 ﻿namespace CST_117_Milestone
 {
-    partial class Form1
+    public partial class inventoryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -43,6 +43,7 @@
             this.quantityLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.driverButton = new System.Windows.Forms.Button();
+            this.inventoryManagerButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // inventoryListBox
@@ -50,7 +51,7 @@
             this.inventoryListBox.FormattingEnabled = true;
             this.inventoryListBox.Location = new System.Drawing.Point(12, 40);
             this.inventoryListBox.Name = "inventoryListBox";
-            this.inventoryListBox.Size = new System.Drawing.Size(315, 394);
+            this.inventoryListBox.Size = new System.Drawing.Size(396, 394);
             this.inventoryListBox.TabIndex = 0;
             this.inventoryListBox.SelectedIndexChanged += new System.EventHandler(this.inventoryListBox_SelectedIndexChanged);
             // 
@@ -88,35 +89,35 @@
             this.itemNameTextBox.AcceptsTab = true;
             this.itemNameTextBox.Location = new System.Drawing.Point(107, 440);
             this.itemNameTextBox.Name = "itemNameTextBox";
-            this.itemNameTextBox.Size = new System.Drawing.Size(170, 20);
+            this.itemNameTextBox.Size = new System.Drawing.Size(262, 20);
             this.itemNameTextBox.TabIndex = 6;
             // 
             // itemBrandTextBox
             // 
             this.itemBrandTextBox.Location = new System.Drawing.Point(107, 467);
             this.itemBrandTextBox.Name = "itemBrandTextBox";
-            this.itemBrandTextBox.Size = new System.Drawing.Size(170, 20);
+            this.itemBrandTextBox.Size = new System.Drawing.Size(262, 20);
             this.itemBrandTextBox.TabIndex = 7;
             // 
             // itemPriceTextBox
             // 
             this.itemPriceTextBox.Location = new System.Drawing.Point(107, 494);
             this.itemPriceTextBox.Name = "itemPriceTextBox";
-            this.itemPriceTextBox.Size = new System.Drawing.Size(170, 20);
+            this.itemPriceTextBox.Size = new System.Drawing.Size(262, 20);
             this.itemPriceTextBox.TabIndex = 8;
             // 
             // itemCostTextBox
             // 
             this.itemCostTextBox.Location = new System.Drawing.Point(107, 521);
             this.itemCostTextBox.Name = "itemCostTextBox";
-            this.itemCostTextBox.Size = new System.Drawing.Size(170, 20);
+            this.itemCostTextBox.Size = new System.Drawing.Size(262, 20);
             this.itemCostTextBox.TabIndex = 9;
             // 
             // itemQuantityTextBox
             // 
             this.itemQuantityTextBox.Location = new System.Drawing.Point(107, 548);
             this.itemQuantityTextBox.Name = "itemQuantityTextBox";
-            this.itemQuantityTextBox.Size = new System.Drawing.Size(170, 20);
+            this.itemQuantityTextBox.Size = new System.Drawing.Size(262, 20);
             this.itemQuantityTextBox.TabIndex = 10;
             this.itemQuantityTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -176,11 +177,22 @@
             this.driverButton.UseVisualStyleBackColor = true;
             this.driverButton.Click += new System.EventHandler(this.driverButton_Click);
             // 
-            // Form1
+            // inventoryManagerButton
+            // 
+            this.inventoryManagerButton.Location = new System.Drawing.Point(333, 11);
+            this.inventoryManagerButton.Name = "inventoryManagerButton";
+            this.inventoryManagerButton.Size = new System.Drawing.Size(75, 23);
+            this.inventoryManagerButton.TabIndex = 19;
+            this.inventoryManagerButton.Text = "Manage";
+            this.inventoryManagerButton.UseVisualStyleBackColor = true;
+            this.inventoryManagerButton.Click += new System.EventHandler(this.button1_Click_4);
+            // 
+            // inventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 576);
+            this.ClientSize = new System.Drawing.Size(420, 578);
+            this.Controls.Add(this.inventoryManagerButton);
             this.Controls.Add(this.driverButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.quantityLabel);
@@ -199,7 +211,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "inventoryForm";
             this.Text = "Inventory Control";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -209,7 +221,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox inventoryListBox;
+        public System.Windows.Forms.ListBox inventoryListBox;
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.Button createButton;
         private System.Windows.Forms.Label itemNameLabel;
@@ -224,6 +236,7 @@
         private System.Windows.Forms.Label quantityLabel;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button driverButton;
+        private System.Windows.Forms.Button inventoryManagerButton;
     }
 }
 

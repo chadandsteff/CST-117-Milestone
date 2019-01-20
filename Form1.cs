@@ -8,6 +8,8 @@
 // Update for 12/16
 // I have included a driver button with code to add a few items.
 // these items can be manipulated, saved, removed, and there are some guard rails in place to prevent crashes.
+//
+// Milestone 3 - note the driver is in the Form1 - it is retained from previous tasks (I think I was ahead of schedule on this.)
 
 using System;
 using System.Collections.Generic;
@@ -21,24 +23,38 @@ using System.Windows.Forms;
 
 namespace CST_117_Milestone
 {
-    public partial class Form1 : Form
+    public partial class inventoryForm : Form
     {
         int totalItems = 0;
         int currentItem = 0;
-        // for handling money issues        
-        List<InventoryItem> itemList = new List<InventoryItem>();
+        
+        // for handling the switching of windows
+        public static List<InventoryItem> itemList { get; set; } = new List<InventoryItem>();       
+        public static inventoryForm myMainWindow;
 
-        public Form1()
+        public inventoryForm()
         {
             InitializeComponent();
+            myMainWindow = this;
             saveButton.Enabled = false;
             removeButton.Enabled = false;         
+        }
+
+        public void refillList()
+        {
+            inventoryListBox.Items.Clear();
+            for (int i = 0; i < itemList.Count; i++)
+            {
+                inventoryListBox.Items.Add(itemList[i]);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
         }
+
+
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -66,7 +82,7 @@ namespace CST_117_Milestone
             int givenItemQuantity = checkInt.parseInt(itemQuantityTextBox.Text);
 
             // add the item to the object list itemList and then add the top itemList item to the inventoryListBox 
-            itemList.Add(new InventoryItem() { ItemName = givenItemName, ItemBrand = givenItemBrand, ItemPrice = givenItemPrice, ItemCost = givenItemCost, ItemQuantity = givenItemQuantity });
+            itemList.Add(new InventoryItem() { itemName = givenItemName, itemBrand = givenItemBrand, itemPrice = givenItemPrice, itemCost = givenItemCost, itemQuantity = givenItemQuantity });
             inventoryListBox.Items.Add(itemList[totalItems]);
             totalItems++;
 
@@ -97,11 +113,11 @@ namespace CST_117_Milestone
                 if (indexLocation != -1)
                 {
                     // show the selected item in the fields
-                    itemNameTextBox.Text = itemList[inventoryListBox.SelectedIndex].ItemName;
-                    itemBrandTextBox.Text = itemList[inventoryListBox.SelectedIndex].ItemBrand;
+                    itemNameTextBox.Text = itemList[inventoryListBox.SelectedIndex].itemName;
+                    itemBrandTextBox.Text = itemList[inventoryListBox.SelectedIndex].itemBrand;
                     itemPriceTextBox.Text = itemList[inventoryListBox.SelectedIndex].itemPrice.ToString("f2");
-                    itemCostTextBox.Text = itemList[inventoryListBox.SelectedIndex].ItemCost.ToString("f2");
-                    itemQuantityTextBox.Text = itemList[inventoryListBox.SelectedIndex].ItemQuantity.ToString();
+                    itemCostTextBox.Text = itemList[inventoryListBox.SelectedIndex].itemCost.ToString("f2");
+                    itemQuantityTextBox.Text = itemList[inventoryListBox.SelectedIndex].itemQuantity.ToString();
                     // itemList.RemoveAt(inventoryListBox.SelectedIndex);
 
                     // set UI elements
@@ -120,21 +136,21 @@ namespace CST_117_Milestone
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void driverButton_Click(object sender, EventArgs e)
         {
-            itemList.Add(new InventoryItem() { ItemName = "Snacky cakes", ItemBrand = "Snacky", ItemPrice = 5.00, ItemCost = 2.00, ItemQuantity = 20 });
+            itemList.Add(new InventoryItem() { itemName = "Snacky cakes", itemBrand = "Snacky", itemPrice = 5.00, itemCost = 2.00, itemQuantity = 20 });
             inventoryListBox.Items.Add(itemList[totalItems]);
             totalItems++;
-            itemList.Add(new InventoryItem() { ItemName = "Snacky cakes Gonzo", ItemBrand = "Snacky", ItemPrice = 6.00, ItemCost = 2.25, ItemQuantity = 50 });
+            itemList.Add(new InventoryItem() { itemName = "Snacky cakes Gonzo", itemBrand = "Snacky", itemPrice = 6.00, itemCost = 2.25, itemQuantity = 50 });
             inventoryListBox.Items.Add(itemList[totalItems]);
             totalItems++;
-            itemList.Add(new InventoryItem() { ItemName = "Snacky cakes Bonkers", ItemBrand = "Snacky", ItemPrice = 10.00, ItemCost = 2.75, ItemQuantity = 10 });
+            itemList.Add(new InventoryItem() { itemName = "Snacky cakes Bonkers", itemBrand = "Snacky", itemPrice = 10.00, itemCost = 2.75, itemQuantity = 10 });
             inventoryListBox.Items.Add(itemList[totalItems]);
             totalItems++;
-            itemList.Add(new InventoryItem() { ItemName = "Snacky cakes Lite", ItemBrand = "Snacky", ItemPrice = 1.50, ItemCost = 0.25, ItemQuantity = 5 });
+            itemList.Add(new InventoryItem() { itemName = "Snacky cakes Lite", itemBrand = "Snacky", itemPrice = 1.50, itemCost = 0.25, itemQuantity = 5 });
             inventoryListBox.Items.Add(itemList[totalItems]);
             totalItems++;
         }
@@ -159,11 +175,11 @@ namespace CST_117_Milestone
             if (indexLocation != -1)
             {
                 // show the selected item in the fields
-                itemList[inventoryListBox.SelectedIndex].ItemName = givenItemName;
-                itemList[inventoryListBox.SelectedIndex].ItemBrand = givenItemBrand;
+                itemList[inventoryListBox.SelectedIndex].itemName = givenItemName;
+                itemList[inventoryListBox.SelectedIndex].itemBrand = givenItemBrand;
                 itemList[inventoryListBox.SelectedIndex].itemPrice = givenItemPrice;
-                itemList[inventoryListBox.SelectedIndex].ItemCost = givenItemCost;
-                itemList[inventoryListBox.SelectedIndex].ItemQuantity = givenItemQuantity;
+                itemList[inventoryListBox.SelectedIndex].itemCost = givenItemCost;
+                itemList[inventoryListBox.SelectedIndex].itemQuantity = givenItemQuantity;
 
                 // set UI elements
                 saveButton.Enabled = true;
@@ -178,6 +194,23 @@ namespace CST_117_Milestone
             itemQuantityTextBox.Text = "";
 
         }
+
+
+
+        private void button1_Click_4(object sender, EventArgs e)
+        {
+            InventoryManager manageInventory = new InventoryManager();
+            if (InventoryManager.managerWindow == null)
+            {
+                manageInventory = InventoryManager.managerWindow;
+            } 
+                       
+            manageInventory.Show();
+            this.Hide();        
+        }
+
+
+
     }
 
     public static class checkInt
@@ -202,6 +235,8 @@ namespace CST_117_Milestone
             // return the value through the parser.
             return value.parseInt();
         }
+
+
     }
 
     public static class checkDouble
@@ -228,6 +263,5 @@ namespace CST_117_Milestone
             return value.parseInt();
         }
     }
-
 
 }

@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace CST_117_Milestone
 {
-    class InventoryItem
+    public class InventoryItem
     {
         public string itemName { get; set; }
         public string itemBrand { get; set; }
@@ -31,74 +31,6 @@ namespace CST_117_Milestone
             this.itemPrice = 0.0;
             this.itemCost = 0.0;
             this.itemQuantity = 0;
-        }
-
-        public string ItemName
-        {
-            get
-            {
-                return this.itemName;
-            }
-            set
-            {
-                this.itemName = value;
-            }
-        }
-
-        public string ItemBrand
-        {
-            get
-            {
-                return this.itemBrand;
-            }
-            set
-            {
-                this.itemBrand = value;
-            }
-        }
-
-        public double ItemPrice
-        {
-            get
-            {
-                return this.itemPrice;
-            }
-            set
-            {
-                this.itemPrice = value;
-            }
-        }
-
-        public double ItemCost
-        {
-            get
-            {
-                return this.itemCost;
-            }
-            set
-            {
-                this.itemCost = value;
-            }
-        }
-
-        public int ItemQuantity
-        {
-            get
-            {
-                return this.itemQuantity;
-            }
-            set
-            {
-                if ((value >= 1) && (value <= 200000))
-                {
-                    this.itemQuantity = value;
-                }
-                else
-                {
-                    // throw exception
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
         }
 
         public override string ToString()
